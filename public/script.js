@@ -69,7 +69,7 @@ function genLocations(){
 resetData();
 genButton.addEventListener('click', function(){genButtonF()});
 finalizebutton.addEventListener('click', function(){finButtonF()});
-viewcode.addEventListener('click',function(){window.open("https://google.com")});
+viewcode.addEventListener('click',function(){window.open("https://github.com/bszmihaly/ulesrend")});
 
 function finButtonF(){
     finalizing = true;
