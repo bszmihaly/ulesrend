@@ -64,3 +64,8 @@ node_modules/
 
 # dotenv environment variables file
 .env
+
+data.txt
+data.accdb
+data.xlsx
+data2.txt
