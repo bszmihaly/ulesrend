@@ -55,28 +55,32 @@ div{
     left: calc(50% + 6.5vw);
     bottom: 2vw;
     transform: translate(-50%, 0);
-    background-color: rgb(0, 0, 192);
+    background-color: rgb(4, 0, 255);
     color: white;
     border-radius: 1vw;
     font-family: "Arial", sans-serif;
     text-align: center;
     line-height: 5vw;
+    transition: left 1s ease-in-out 0.2s;
 }
 #finalizebutton{
+    -webkit-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+	-o-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+    transform: scale(1.05);
     user-select: none;
     position: absolute;
     height: 5vw;
     width: 12vw;
     left: calc(50% - 6.5vw);
-    bottom: 2vw;
-    transform: translate(-50%, 0);
+    bottom: 4.5vw;
+    transform: translate(-50%, 50%);
     background-color: rgb(0, 86, 199);
-    
     border-radius: 1vw;
-    
     display: flex;
-    
     justify-content: center;
+    transition: all 1s ease-in-out;
 }
 #finalizebutton>div{
     line-height: 1.5vw;
@@ -125,13 +129,11 @@ div{
     width: 10vw;
     height: 10vw;
     border-radius: 2vw;
-    transition: right 1s;
-    transition-timing-function: ease-in-out;
+    transition: right 1s ease-in-out;
 }
 #viewcode:hover{
     right: -3vw;
-    transition: right 1s;
-    transition-timing-function: ease-in-out;
+    transition: right 1s ease-in-out;
 }
 
 #viewcodeimage{
@@ -146,5 +148,10 @@ div{
     position: absolute;
     top: 4vw;
     right: calc(2vw + 6vw);
-    rotate: 180deg;
+    transform: rotateZ(180deg);/*rotateX(180deg); */
+    transition: 1s ease-in-out;
+}
+#viewcode:hover #arrow{
+    transform: rotateX(180deg);/*rotateZ(180deg); */
+    transition: 1s ease-in-out;
 }

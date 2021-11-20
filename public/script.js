@@ -69,7 +69,11 @@ function genLocations(){
 resetData();
 genButton.addEventListener('click', function(){genButtonF()});
 finalizebutton.addEventListener('click', function(){finButtonF()});
-viewcode.addEventListener('click',function(){window.open("https://github.com/bszmihaly/ulesrend")});
+viewcode.addEventListener('click',
+async function(){
+    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+    //window.open("https://github.com/bszmihaly/ulesrend")
+});
 
 function finButtonF(){
     finalizing = true;
@@ -77,7 +81,7 @@ function finButtonF(){
     finalizebutton.style.display = 'none';
     genButton.innerText = "Végleges sorsolás";
     genButton.style.backgroundColor = "rgb(250, 0, 0)";
-    genButton.style.left = "50%"
+    genButton.style.left = "50%";
     //visTable.parentNode.removeChild(visTable);
     //genTable();
 }
