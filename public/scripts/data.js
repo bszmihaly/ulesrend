@@ -35,6 +35,3 @@ var data = {
         "Vincze Natasa"
     ]
 }
-
-var final = false;
-var finalizing = false;

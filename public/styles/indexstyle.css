@@ -61,14 +61,9 @@ div{
     font-family: "Arial", sans-serif;
     text-align: center;
     line-height: 5vw;
-    transition: left 1s ease-in-out 0.2s;
+    /*transition: left 1s ease-in-out 0.2s;*/
 }
-#finalizebutton{
-    -webkit-transform: scale(1.05);
-	-moz-transform: scale(1.05);
-	-o-transform: scale(1.05);
-	-ms-transform: scale(1.05);
-    transform: scale(1.05);
+#savebutton{
     user-select: none;
     position: absolute;
     height: 5vw;
@@ -80,14 +75,11 @@ div{
     border-radius: 1vw;
     display: flex;
     justify-content: center;
-    transition: all 1s ease-in-out;
-}
-#finalizebutton>div{
-    line-height: 1.5vw;
+    /*transition: all 1s ease-in-out;*/
+    line-height: 5vw;
     font-family: "Arial", sans-serif;
     text-align: center;
     color: white;
-    padding-top: 1vw;
 }
 #visualisationstuff{
     top: calc(10vw + 10px);
@@ -118,6 +110,18 @@ div{
     padding-bottom: 1vw;
     height: 3vw;
 }
+.benchdiv{
+    visibility: hidden;
+    position: relative;
+    background-color: rgb(197, 129, 74);
+    border-radius: 1vw;
+    width: 60%;
+    height: 3vw;
+    left: 50%;
+    transform: translate(-50%, 0);
+    line-height: 1.5vw;
+}
+
 #tfield{
     font-size: 12px;
     top: 800px;

@@ -2,7 +2,7 @@ var textfield = document.getElementById("textarea");
 var genButton = document.getElementById("generatebutton");
 var visualarea = document.getElementById("finishedstuff");
 var tfield = document.getElementById("tfield");
-var finalizebutton = document.getElementById("finalizebutton");
+var savebutton = document.getElementById("savebutton");
 var viewcode = document.getElementById("viewcode");
 var visTable;
 
@@ -68,33 +68,26 @@ function genLocations(){
 }
 resetData();
 genButton.addEventListener('click', function(){genButtonF()});
-finalizebutton.addEventListener('click', function(){finButtonF()});
+savebutton.addEventListener('click', function(){savebuttonF()});
 viewcode.addEventListener('click',
 async function(){
-    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-    //window.open("https://github.com/bszmihaly/ulesrend")
+    //window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+    window.open("https://github.com/bszmihaly/ulesrend")
 });
 
-function finButtonF(){
-    finalizing = true;
-    finalizebutton.style.visibility = 'hidden';
-    finalizebutton.style.display = 'none';
-    genButton.innerText = "Végleges sorsolás";
-    genButton.style.backgroundColor = "rgb(250, 0, 0)";
-    genButton.style.left = "50%";
-    //visTable.parentNode.removeChild(visTable);
-    //genTable();
+function savebuttonF(){
+    //save
+    //open new page
+    
 }
 function genButtonF(){
-    if(!final){
-        resetData();
-        genLocations();
-        displayToTable();
-        if(finalizing){
-            final = true;
-            genButton.style.visibility = 'hidden';
-            genButton.style.display = 'none'
-        }
+    //hundredTests();
+    resetData();
+    genLocations();
+    displayToTable();
+    all = document.getElementsByClassName('benchdiv');
+    for (var i = 0; i < all.length; i++) {
+        all[i].style.visibility = 'visible';
     }
 }
 
@@ -114,6 +107,10 @@ function genTable(){
             //cell.innerText = "asd";
             cell.classList.add("benchclass")
             tRow.appendChild(cell);
+            div = document.createElement('div');
+            
+            div.classList.add("benchdiv");
+            cell.appendChild(div);
             r.push(cell);
         }
         references.push(r)
@@ -125,16 +122,16 @@ function genTable(){
 function displayToTable(){
     for (let i = 0; i < references.length; i++) {
         for (let j = 0; j < references[i].length; j++) {
-            references[i][j].innerText = endData[i][j][0] + "\n" + endData[i][j][1]
+            references[i][j].firstChild.innerText = endData[i][j][0] + "\n" + endData[i][j][1]
         }
     }
 }
 
-/*function writeToTfield(){
+/*function writeToTfield(k){
     arr = data.f.concat(data.l);
     arr = arr.sort();
     if(tfield.innerText == ""){
-        t = ""
+        t = " ;"
         for (let i = 0; i < arr.length; i++) {
             t += arr[i] + ";" 
         }
@@ -154,13 +151,13 @@ function displayToTable(){
         }
     }
     tfield.innerText += text + "\n"
-    console.log(text);
+    console.log(k + ";" +text);
 }
 function hundredTests(){
     for (let i = 0; i < 10000; i++) {
         resetData();
         genLocations();
         displayToTable();
-        writeToTfield();
+        writeToTfield(i);
     }
-}*/
+}*/   
