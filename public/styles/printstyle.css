@@ -1,0 +1,29 @@
+#pTitle{
+    font-size: 45px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#pTbody{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.printBench{
+    width: 20vw;
+    text-align: center;
+    font-size: 1.7vw;
+    padding-top: 0.7vw;
+    height: 4.4vw;
+    border: solid black;
+}
+
+.noborder{
+    border: none;
+}

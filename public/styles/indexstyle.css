@@ -63,7 +63,7 @@ div{
     line-height: 5vw;
     /*transition: left 1s ease-in-out 0.2s;*/
 }
-#savebutton{
+#printbutton{
     user-select: none;
     position: absolute;
     height: 5vw;
@@ -115,11 +115,11 @@ div{
     position: relative;
     background-color: rgb(197, 129, 74);
     border-radius: 1vw;
-    width: 60%;
-    height: 3vw;
+    width: 80%;
+    height: 4vw;
     left: 50%;
     transform: translate(-50%, 0);
-    line-height: 1.5vw;
+    line-height: 2vw;
 }
 
 #tfield{

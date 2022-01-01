@@ -2,40 +2,18 @@ var textfield = document.getElementById("textarea");
 var genButton = document.getElementById("generatebutton");
 var visualarea = document.getElementById("finishedstuff");
 var tfield = document.getElementById("tfield");
-var savebutton = document.getElementById("savebutton");
+var printbutton = document.getElementById("printbutton");
 var viewcode = document.getElementById("viewcode");
 var visTable;
+var toparea = document.getElementById('toparea')
 
-textfield.innerText = "";
 references = []
-
-var idData = []
-var endData = []
-
-var clonedData = JSON.parse(JSON.stringify(data));
-function resetData(){
-    clonedData = JSON.parse(JSON.stringify(data));
-    endData = [
-        [["",""], ["",""], ["ajtó",""]],
-        ["", "", ""],
-        ["", "", ""],
-        ["", "", ""],
-        ["", "", ""],
-        ["", "", ""],
-    ]
-    idData = [
-        [0,1],
-        [1,0],[1,1],[1,2],
-        [2,0],[2,1],[2,2],
-        [3,0],[3,1],[3,2],
-        [4,0],[4,1],[4,2],
-        [5,0],[5,1],[5,2]
-    ]
-}
 
 genTable();
 
 function gen() {
+    clonedData.f = shufflyFuncty(clonedData.f);
+    clonedData.l = shufflyFuncty(clonedData.l);
     var str1 = "";
     var str2 = "";
     var id1 = 0;
@@ -65,21 +43,25 @@ function genLocations(){
         endData[idData[x][0]][idData[x][1]] = gen();
         idData.splice(x, 1);
     }
+    localStorage.setItem('enddata', JSON.stringify(endData))
 }
 resetData();
 genButton.addEventListener('click', function(){genButtonF()});
-savebutton.addEventListener('click', function(){savebuttonF()});
+printbutton.addEventListener('click', function(){printbuttonF()});
 viewcode.addEventListener('click',
 async function(){
     //window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
     window.open("https://github.com/bszmihaly/ulesrend")
 });
 
-function savebuttonF(){
-    //save
-    //open new page
-    
+function printbuttonF(){
+    //window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+    window.open("../pages/print.html");
+    genTable();
+    //genPrintTable();
+
 }
+
 function genButtonF(){
     //hundredTests();
     resetData();
@@ -125,6 +107,18 @@ function displayToTable(){
             references[i][j].firstChild.innerText = endData[i][j][0] + "\n" + endData[i][j][1]
         }
     }
+}
+
+function shufflyFuncty(array){
+    let currentIndex = array.length,  randomIndex;
+
+    while (currentIndex != 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      
+      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+    return array;
 }
 
 /*function writeToTfield(k){
