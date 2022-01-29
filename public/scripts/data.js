@@ -37,12 +37,32 @@ var data = {
     ]
 }
 
-var idData = []
+var idData = [
+    [0,1],
+    [1,0],[1,1],[1,2],
+    [2,0],[2,1],[2,2],
+    [3,0],[3,1],[3,2],
+    [4,0],[4,1],[4,2],
+    [5,0],[5,1],[5,2]
+]
 var endData = []
+var unformattedData = []
+var adresses = []
 
-var clonedData = JSON.parse(JSON.stringify(data));
 function resetData(){
-    clonedData = JSON.parse(JSON.stringify(data));
+    unformattedData = [
+        //locID, arrayid & ID1, arrayid & ID2
+    ]
+    for (i = 0; i < 16; i++) {
+        unformattedData.push([0,[0,0],[1,0]])
+    }
+
+    adresses = [
+        Array.from(Array(16).keys()),
+        Array.from(Array(data.f.length).keys()),
+        Array.from(Array(data.l.length).keys()),
+    ]
+
     endData = [
         [["",""], ["",""], ["",""]],
         ["", "", ""],
@@ -50,13 +70,5 @@ function resetData(){
         ["", "", ""],
         ["", "", ""],
         ["", "", ""],
-    ]
-    idData = [
-        [0,1],
-        [1,0],[1,1],[1,2],
-        [2,0],[2,1],[2,2],
-        [3,0],[3,1],[3,2],
-        [4,0],[4,1],[4,2],
-        [5,0],[5,1],[5,2]
     ]
 }
