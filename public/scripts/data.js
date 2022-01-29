@@ -2,6 +2,7 @@ var data = {
     "f": [
         "Bánhegyi Dániel",
         "Bogár-Szabó Mihály",
+        "Bujdosó Koppány",
         "Ecsédi Dániel",
         "Fejes Gergő",
         "Gera Ferenc",
