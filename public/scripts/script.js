@@ -17,89 +17,12 @@ async function(){
     window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
     //window.open("https://github.com/bszmihaly/ulesrend")
 });
-dt = [
-    [12, [0,3],[1,3]],
-    [13, [0,1],[1,8]]
-]
 
-var c = 0
-var mc = -1
-window.addEventListener("keydown", function (event) {
-    if(parseInt(event.key)){
-        c = 0
-        mc = parseInt(event.key)   
-    }
-    if(event.key == "ArrowDown" || event.key == "m"){
-        c = 0
-        mc = 1;
-    }
-}, true);
 
 genTable();
 
-function gen() {
-    /*
-    var str1 = "";
-    var str2 = "";
-    var id1 = 0;
-    var id2 = 0;
-
-
-    var id2 = Math.floor(Math.random() * clonedData.f.length);
-    str1 += selectF(id2)
-    if (clonedData.l.length > 0) {
-        id1 = Math.floor(Math.random() * clonedData.l.length);
-        str2 += selectL(id1)
-    } else {
-        if(clonedData.f.length>0){
-            id1 = Math.floor(Math.random() * clonedData.f.length);
-            str2 += selectF(id1)
-        }else{
-            str2 = "";
-        }
-    }
-    
-    return [str1, str2];*/
-}
-
-
-function genLocations(){
-    {/*
-    if(c == mc){
-        for (j = 0; j < dt.length; j++) {
-            if(parseInt(dt[j][0])){
-            }else{
-                x = dt[j][0]
-            }
-            console.log("asd")
-            endData [idData [x] [0]] [idData [x] [1]] = [selectF(dt[j][1]), selectL(dt[j][2])]
-        }
-    }
-    for (i = 0; i < 16; i++) {
-        bol = true
-        if(c == mc ){
-            for (j = 0; j < dt.length; j++) {
-                if(dt[j][0] == i){
-                    console.log("false")
-                    bol = false
-                }
-            }
-        }
-        if(bol){
-            endData[idData[i][0]] [idData[i][1]] = gen();
-        }
-    } */}
-    localStorage.setItem('enddata', JSON.stringify(endData))
-}
-
-function generatorFunction(t = []){
-    for (i = 0; i < t.length; i++) {
-        unformattedData[i] = t[i]
-        adresses[0].splice(adresses[0].indexOf(t[i][0]),1);
-        adresses[t[i][1][0]+1].splice(adresses[t[i][1][0]+1].indexOf(t[i][1][1]),1)
-        adresses[t[i][2][0]+1].splice(adresses[t[i][2][0]+1].indexOf(t[i][2][1]),1)
-    }
-    for (i = t.length; i < idData.length; i++) {
+function oldGeneratorFunction(){
+    for (i = 0; i < idData.length; i++) {
         //get random place
         r = Math.floor(Math.random()*adresses[0].length);
         unformattedData[i][0] = adresses[0][r];
@@ -128,10 +51,10 @@ function generatorFunction(t = []){
             }
         }
     }
-    //console.log(JSON.stringify(unformattedData))
-    //formatData();
-    //console.log(unformattedData)    
-    //end needs to make EndData things
+}
+
+function generatorFunction(){
+    $.getJSON()
 }
 
 function formatData(){
@@ -159,13 +82,8 @@ function formatData(){
     localStorage.setItem('enddata', JSON.stringify(endData))
 }
 function genButtonF(){
-    c++;
     resetData();
-    if (c==mc) {
-        generatorFunction(dt);
-    }else{
-        generatorFunction();
-    }
+    generatorFunction();
     formatData();
     displayToTable();
     all = document.getElementsByClassName('benchdiv');
@@ -180,9 +98,8 @@ function printbuttonF(){
     //window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
     window.open("../pages/print.html");
     genTable();
-    //genPrintTable();
-
 }
+
 function genTable(){
     visTable = document.createElement('table');
     visTable.classList.add("tableclass");
@@ -211,34 +128,10 @@ function genTable(){
     visualarea.appendChild(visTable);
 }
 
-/*
-function selectF(id){
-    s = clonedData.f[id]
-    clonedData.f.splice(id, 1);
-    return s;
-}
-function selectL(id){
-    s = adresses[id]
-    adresses[2].splice(id, 1);
-    return s;
-}*/
-
 function displayToTable(){
     for (let i = 0; i < references.length; i++) {
         for (let j = 0; j < references[i].length; j++) {
             references[i][j].firstChild.innerText = endData[i][j][0] + "\n" + endData[i][j][1]
         }
     }
-}
-
-function shufflyFuncty(array){
-    let currentIndex = array.length,  randomIndex;
-
-    while (currentIndex != 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-      
-      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-    }
-    return array;
 }
