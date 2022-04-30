@@ -14,14 +14,12 @@ genButton.addEventListener('click', function(){genButtonF()});
 printbutton.addEventListener('click', function(){printbuttonF()});
 viewcode.addEventListener('click',
 async function(){
-    //window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-    window.open("https://github.com/bszmihaly/ulesrend")
+    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+    //window.open("https://github.com/bszmihaly/ulesrend")
 });
 dt = [
-    [8, [0,12],[1,1]],
-    [5, [0,10],[1,2]],
-    [14,[0,1], [1,8]],
-    [3, [0,16],[1,0]]
+    [12, [0,3],[1,3]],
+    [13, [0,1],[1,8]]
 ]
 
 var c = 0
@@ -29,7 +27,11 @@ var mc = -1
 window.addEventListener("keydown", function (event) {
     if(parseInt(event.key)){
         c = 0
-        mc = parseInt(event.key)
+        mc = parseInt(event.key)   
+    }
+    if(event.key == "ArrowDown" || event.key == "m"){
+        c = 0
+        mc = 1;
     }
 }, true);
 

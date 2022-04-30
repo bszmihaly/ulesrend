@@ -17,6 +17,7 @@ var data = {
         "Pásztor Bálint",
         "Szabó Dávid",
         "Szekeres Máté",
+        "Fabian Spiekermann",
         "Vágó Ábel",
         "Virág Péter"
     ],
@@ -38,7 +39,7 @@ var data = {
 }
 
 var idData = [
-    [0,1],
+    [0,0],[0,1],
     [1,0],[1,1],[1,2],
     [2,0],[2,1],[2,2],
     [3,0],[3,1],[3,2],
@@ -53,12 +54,12 @@ function resetData(){
     unformattedData = [
         //locID, arrayid & ID1, arrayid & ID2
     ]
-    for (i = 0; i < 16; i++) {
+    for (i = 0; i < 17; i++) {
         unformattedData.push([0,[0,0],[1,0]])
     }
 
     adresses = [
-        Array.from(Array(16).keys()),
+        Array.from(Array(17).keys()),
         Array.from(Array(data.f.length).keys()),
         Array.from(Array(data.l.length).keys()),
     ]
