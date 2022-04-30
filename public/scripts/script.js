@@ -54,11 +54,16 @@ function oldGeneratorFunction(){
 }
 
 function generatorFunction(){
-    $.getJSON()
+    for (i = 0; i < idData.length; i++) {
+        r = Math.floor(Math.random()*adresses[0].length);
+        adr = adresses[0][r];
+        adresses[0].splice(r, 1);
+        endData[ idData[adr][0] ][ idData[adr][1] ] = data.pairs[i]
+    }
 }
 
 function formatData(){
-    for (i = 0; i < unformattedData.length; i++) {
+    /*for (i = 0; i < unformattedData.length; i++) {
         idID = unformattedData[i][0]
         res =["",""]
         if(unformattedData[i][1][0] == 0){
@@ -78,7 +83,7 @@ function formatData(){
             res[1] = ""
         }
         endData[ idData[idID][0] ][ idData[idID][1] ] = res
-    }
+    }*/
     localStorage.setItem('enddata', JSON.stringify(endData))
 }
 function genButtonF(){
